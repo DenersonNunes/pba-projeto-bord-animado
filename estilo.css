@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh; 
+   background: #151320;
+
+}
+figure.foto-legenda {
+    position: relative;
+    width: 400;
+    height: 400;
+    color: #fff;
+    background: #151320;
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    font: bold 1em 'Century Gothic';
+    text-transform: uppercase;
+
+}
+.foto-legenda::before, .foto-legenda::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: calc(100% + 30px);
+    height: calc(100% + 30px);
+    background:  linear-gradient(48deg, #ffff00, #00ff00, #0099ff, #001aff, #a200ff, #ff0055, #ff0000,  #ffff00, #00ff00, #0099ff, #001aff, #a200ff);
+    background-size: 300%;
+    border-radius: 8px;
+    animation:  AnimarBora 5s linear alternate infinite;
+
+}
+
+@keyframes AnimarBora {
+    0% {
+        background-position: 0;
+    }
+    100%{
+        background-position:300%;
+    }
+
+}
+.foto-legenda::after {
+    filter: blur(50px);
+
+}
+figure.foto-legenda figcaption{
+    opacity: 0;
+    position: absolute;
+    background-color: rgba(0,0,0,.5);
+   padding: 1px;
+   width: 98%;
+    height: 98%;
+    box-sizing: border-box;
+    transition: opacity 3s;
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 3px 3px 3px black;
+
+}
+figure.foto-legenda:hover figcaption{
+    opacity: 1;
+
+}
+figure-foto-legenda p {
+    text-align: justify;
+    text-indent: 50px;
+    display:  flex;
+    align-items: center;
+    border-radius: 3px;
+
+}
